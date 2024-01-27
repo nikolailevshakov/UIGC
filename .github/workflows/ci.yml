@@ -2,7 +2,7 @@ name: Scala CI
 
 on:
   push:
-    branches: [ "master" ]
+    branches: [ "master", "feature/ci-pipeline" ]
   pull_request:
     branches: [ "master" ]
 
@@ -11,9 +11,8 @@ permissions:
 
 jobs:
   build:
-
+    name: Run sbt test on Ubuntu
     runs-on: ubuntu-latest
-
     steps:
     - uses: actions/checkout@v3
     - name: Set up JDK 11
